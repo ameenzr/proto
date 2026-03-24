@@ -1,0 +1,57 @@
+Node: nav.fixed (ID: 15:39) Path: Document > Page 1 > http://localhost:3000/ - http://localhost:3000/ by html.to.design ❤️ FREE version - 25/03/2026, 0:07:47 GMT+5:30 > 390w default > nav.fixed
+Props: {
+  "layoutMode": "HORIZONTAL",
+  "paddingLeft": 24,
+  "paddingRight": 24,
+  "counterAxisAlignItems": "CENTER",
+  "layoutAlign": "INHERIT",
+  "width": 390.3999938964844,
+  "height": 80
+}
+Children: div.flex-1 (undefined, W:262.3999938964844, H:0.009999999776482582), PROTO Logo (undefined, W:80, H:80)
+
+Node: PROTO.svg fill (ID: 15:43) Path: Document > Page 1 > http://localhost:3000/ - http://localhost:3000/ by html.to.design ❤️ FREE version - 25/03/2026, 0:07:47 GMT+5:30 > 390w default > nav.fixed > PROTO Logo > PROTO.svg fill
+Props: {
+  "layoutMode": "VERTICAL",
+  "paddingTop": 34.022987365722656,
+  "paddingBottom": 34.022987365722656,
+  "primaryAxisAlignItems": "CENTER",
+  "counterAxisAlignItems": "CENTER",
+  "width": 389,
+  "height": 80
+}
+Children: Component 1 (undefined, W:187, H:28)
+
+Node: Component 1 (ID: 15:44) Path: Document > Page 1 > http://localhost:3000/ - http://localhost:3000/ by html.to.design ❤️ FREE version - 25/03/2026, 0:07:47 GMT+5:30 > 390w default > nav.fixed > PROTO Logo > PROTO.svg fill > Component 1
+Props: {
+  "layoutAlign": "INHERIT",
+  "width": 187,
+  "height": 28
+}
+Children: Vector (undefined, W:32.28314971923828, H:24.410261154174805), Vector (undefined, W:34.7733268737793, H:24.410261154174805), Vector (undefined, W:29.50372886657715, H:24.410261154174805), Vector (undefined, W:33.267364501953125, H:24.410261154174805), Vector (undefined, W:14.009955406188965, H:13.036663055419922), Vector (undefined, W:33.248741149902344, H:24.410261154174805), Vector (undefined, W:184.91500854492188, H:25.910646438598633)
+
+Node: nav.fixed (ID: 15:62) Path: Document > Page 1 > http://localhost:3000/ - http://localhost:3000/ by html.to.design ❤️ FREE version - 25/03/2026, 0:07:47 GMT+5:30 > Frame > nav.fixed
+Props: {
+  "layoutMode": "HORIZONTAL",
+  "paddingLeft": 24,
+  "paddingRight": 24,
+  "counterAxisAlignItems": "CENTER",
+  "layoutAlign": "INHERIT",
+  "width": 1536,
+  "height": 80
+}
+Children: PROTO Logo (VERTICAL, W:80, H:80), div.flex-1 (undefined, W:1408, H:0.009999999776482582)
+
+Node: PROTO.svg fill (ID: 15:64) Path: Document > Page 1 > http://localhost:3000/ - http://localhost:3000/ by html.to.design ❤️ FREE version - 25/03/2026, 0:07:47 GMT+5:30 > Frame > nav.fixed > PROTO Logo > PROTO.svg fill
+Props: {
+  "layoutMode": "VERTICAL",
+  "paddingTop": 34.022987365722656,
+  "paddingBottom": 34.022987365722656,
+  "primaryAxisAlignItems": "CENTER",
+  "counterAxisAlignItems": "CENTER",
+  "layoutAlign": "INHERIT",
+  "width": 80,
+  "height": 80
+}
+Children: Component 1 (undefined, W:80, H:11.954023361206055)
+
