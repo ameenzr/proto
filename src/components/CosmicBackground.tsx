@@ -35,11 +35,11 @@ export default function CosmicBackground() {
         // Colors closely matching the provided reference image
         const colors = [
           '255, 95, 0',    // Orange
-          '155, 0, 243',   // Purple
-          '0, 243, 141',   // Green
-          '255, 40, 60',   // Deep Red
-          '0, 218, 243',   // Cyan
-          '255, 255, 255'  // White flashes
+          '100, 0, 203',   // Deep Purple
+          '0, 180, 100',   // Deep Green
+          '205, 20, 40',   // Deep Red
+          '0, 160, 190',   // Deep Cyan
+          '40, 40, 50'     // Slate Grey (instead of white flashes)
         ];
         this.color = colors[Math.floor(Math.random() * colors.length)];
         this.width = Math.random() * 3 + 0.5;
@@ -87,7 +87,7 @@ export default function CosmicBackground() {
 
     const render = () => {
       ctx.clearRect(0, 0, width, height);
-      ctx.globalCompositeOperation = 'screen';
+      ctx.globalCompositeOperation = 'multiply';
 
       rays.forEach(ray => {
         ray.update();
@@ -115,31 +115,31 @@ export default function CosmicBackground() {
   }, []);
 
   return (
-    <div className="fixed inset-0 overflow-hidden pointer-events-none -z-10 bg-[#050505]">
+    <div className="fixed inset-0 overflow-hidden pointer-events-none -z-10 bg-[#f4f5f6]">
       
-      {/* Pre-rendered blurred conic gradient to mimic the light blooms in the reference image */}
+      {/* Pre-rendered blurred conic gradient to mimic atmospheric lens flares */}
       <div 
-        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[150vw] h-[150vw] opacity-[0.85] mix-blend-screen blur-[100px]"
+        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[150vw] h-[150vw] opacity-[0.25] mix-blend-multiply blur-[100px]"
         style={{
           background: `conic-gradient(from 0deg at 50% 50%, 
-            rgba(255, 40, 60, 0.5) 0deg, 
-            rgba(0, 243, 141, 0.6) 80deg, 
-            rgba(0, 218, 243, 0.3) 140deg, 
-            rgba(155, 0, 243, 0.5) 200deg, 
-            rgba(255, 95, 0, 0.5) 260deg, 
-            rgba(255, 40, 60, 0.5) 360deg
+            rgba(255, 40, 60, 0.3) 0deg, 
+            rgba(0, 243, 141, 0.4) 80deg, 
+            rgba(0, 218, 243, 0.2) 140deg, 
+            rgba(155, 0, 243, 0.3) 200deg, 
+            rgba(255, 95, 0, 0.3) 260deg, 
+            rgba(255, 40, 60, 0.3) 360deg
           )`
         }}
       />
 
-      {/* Canvas Layer for flying streaks of light */}
-      <canvas ref={canvasRef} className="absolute inset-0 w-full h-full mix-blend-screen opacity-90" />
+      {/* Canvas Layer for flying streaks of dark light */}
+      <canvas ref={canvasRef} className="absolute inset-0 w-full h-full mix-blend-multiply opacity-50" />
 
-      {/* Dark vignette to focus intensity in the center and darken edges */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_10%,#030303_100%)]" />
+      {/* Light vignette to focus intensity in the center and darken edges slightly with amber/gray */}
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,rgba(200,195,190,0.6)_100%)]" />
 
-      {/* Central Star Core */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[30vw] h-[30vw] min-w-[400px] min-h-[400px] bg-white opacity-[0.15] blur-[80px] rounded-full mix-blend-screen" />
+      {/* Central Star Core / Solar Flare */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[30vw] h-[30vw] min-w-[400px] min-h-[400px] bg-white opacity-[0.8] blur-[80px] rounded-full mix-blend-screen" />
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[4px] h-[4px] min-w-[20px] min-h-[20px] bg-white blur-[2px] rounded-full shadow-[0_0_80px_20px_white] mix-blend-screen" />
     </div>
   );

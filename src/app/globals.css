@@ -29,26 +29,59 @@
 }
 
 :root {
-  --background: #131313;
-  --foreground: #ffffff;
+  --background: #f4f5f6;
+  --foreground: #131313;
 }
 
 body {
   background:
-    radial-gradient(ellipse 60% 80% at 100% 60%, rgba(200, 70, 10, 0.35) 0%, transparent 70%),
-    radial-gradient(ellipse 50% 60% at 0% 40%, rgba(0, 30, 50, 0.4) 0%, transparent 65%),
-    #0e0e0e;
-  color: #ffffff;
+    radial-gradient(ellipse 60% 80% at 100% 60%, rgba(200, 70, 10, 0.05) 0%, transparent 70%),
+    radial-gradient(ellipse 50% 60% at 0% 40%, rgba(0, 30, 50, 0.04) 0%, transparent 65%),
+    #f4f5f6;
+  color: var(--foreground);
   font-family: var(--font-inter), ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Base utility for titles as specified in DESIGN.md */
+/* Responsive typography */
 .display-lg {
   font-family: var(--font-space-grotesk);
-  font-size: 3.5rem;
+  font-size: 2.25rem; /* ~36px, optimized for narrow mobile screens */
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.02em;
+}
+
+@media (min-width: 640px) {
+  .display-lg {
+    font-size: 3.5rem; /* tablet */
+  }
+}
+
+@media (min-width: 1024px) {
+  .display-lg {
+    font-size: 5.5rem; /* desktop */
+    letter-spacing: 0.05em;
+  }
+}
+
+
+/* Infinite Marquee Animations */
+@keyframes marquee {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-33.333333%); }
+}
+
+@keyframes marquee-reverse {
+  0% { transform: translateX(-33.333333%); }
+  100% { transform: translateX(0%); }
+}
+
+.animate-marquee {
+  animation: marquee linear infinite;
+}
+
+.animate-marquee-reverse {
+  animation: marquee-reverse linear infinite;
 }
