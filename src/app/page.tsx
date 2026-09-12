@@ -1,17 +1,21 @@
 import Hero from "@/components/Hero";
-import Collab from "@/components/Collab";
-import Motive from "@/components/Motive";
-import Projects from "@/components/Projects";
+import Wedge from "@/components/Wedge";
+import Modes from "@/components/Modes";
+import Operator from "@/components/Operator";
+import Bets from "@/components/Bets";
+import Notes from "@/components/Notes";
 import Contact from "@/components/Contact";
 
 export default function Home() {
   return (
-    <div className="flex flex-col w-full bg-background min-h-screen">
+    <>
       <Hero />
-      <Collab />
-      <Motive />
-      <Projects />
+      <Wedge />
+      <Modes />
+      <Bets />
+      <Operator />
+      <Notes />
       <Contact />
-    </div>
+    </>
   );
 }

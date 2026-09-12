@@ -1,102 +1,23 @@
-"use client";
-
-import { useState, useEffect } from "react";
-
-const buttonLabels = [
-  "Talk to us",
-  "Ideate with us",
-  "Consult with us",
-  "Edify with us",
-];
-
-const keywordsLine1 = "Ultra-Niche Tools · Purpose-Built Software · Workflow Automations · Internal Dashboards · Ultra-Niche Tools · Purpose-Built Software · Workflow Automations · Internal Dashboards · ";
-const keywordsLine2 = "Proof of Concept · Venture Engineering · Technical Co-founding · AI-Assisted Architecture · Proof of Concept · Venture Engineering · Technical Co-founding · AI-Assisted Architecture · ";
-const keywordsLine3 = "Product Incubation · Flash Apps · Rapid Deployment · Micro-SaaS · Zero-to-One Builds · Agile Engineering · Product Incubation · Flash Apps · Rapid Deployment · Micro-SaaS · Zero-to-One Builds · Agile Engineering · ";
-const keywordsLine4 = "Custom Integrations · Process Optimization · Minimum Viable Products · Full-Stack Development · Custom Integrations · Process Optimization · Minimum Viable Products · Full-Stack Development · ";
-const keywordsLine5 = "Rapid Prototyping · Growth Architecture · B2B Platforms · Scalable Infrastructure · Rapid Prototyping · Growth Architecture · B2B Platforms · Scalable Infrastructure · ";
-const keywordsLine6 = "Data Pipelines · Platform Migration · Legacy Modernization · End-to-End Solutions · Data Pipelines · Platform Migration · Legacy Modernization · End-to-End Solutions · ";
-const keywordsLine7 = "Technical Co-founding · Generative AI Prototypes · Micro-SaaS · Agile Engineering · Technical Co-founding · Generative AI Prototypes · Micro-SaaS · Agile Engineering · ";
-const keywordsLine8 = "Performance Tuning · Zero-to-One Builds · Enterprise Apps · Proof of Concept · Performance Tuning · Zero-to-One Builds · Enterprise Apps · Proof of Concept · ";
+import Schematic from "./Schematic";
 
 export default function Hero() {
-  const [labelIndex, setLabelIndex] = useState(0);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setLabelIndex((current) => (current + 1) % buttonLabels.length);
-    }, 1500);
-    return () => clearInterval(interval);
-  }, []);
-
   return (
-    <section id="hero" className="relative h-[100dvh] w-full flex items-center justify-center overflow-hidden">
-      {/* Animated Background */}
-      <div className="absolute inset-x-0 -inset-y-4 md:-inset-y-8 pointer-events-none flex flex-col justify-between opacity-[0.06] select-none text-2xl md:text-4xl lg:text-5xl font-bold whitespace-nowrap text-foreground overflow-hidden">
-        <div className="flex w-max animate-scroll-left">
-          <span>{keywordsLine1}</span>
-          <span>{keywordsLine1}</span>
-        </div>
-        <div className="flex w-max animate-scroll-right">
-          <span>{keywordsLine2}</span>
-          <span>{keywordsLine2}</span>
-        </div>
-        <div className="flex w-max animate-scroll-left">
-          <span>{keywordsLine3}</span>
-          <span>{keywordsLine3}</span>
-        </div>
-        <div className="flex w-max animate-scroll-right">
-          <span>{keywordsLine4}</span>
-          <span>{keywordsLine4}</span>
-        </div>
-        <div className="flex w-max animate-scroll-left">
-          <span>{keywordsLine5}</span>
-          <span>{keywordsLine5}</span>
-        </div>
-        <div className="flex w-max animate-scroll-right">
-          <span>{keywordsLine6}</span>
-          <span>{keywordsLine6}</span>
-        </div>
-        <div className="flex w-max animate-scroll-left">
-          <span>{keywordsLine7}</span>
-          <span>{keywordsLine7}</span>
-        </div>
-        <div className="flex w-max animate-scroll-right">
-          <span>{keywordsLine8}</span>
-          <span>{keywordsLine8}</span>
-        </div>
-      </div>
-
-      {/* Foreground Content */}
-      <div className="relative z-10 flex flex-col items-center justify-center space-y-12 px-6 text-center">
-        <h1 className="text-5xl md:text-7xl font-bold tracking-tight text-foreground">
-          Make it real. <span className="text-primary">Quick!</span>
-        </h1>
-        
-        <button 
-          onClick={() => {
-            const contactSection = document.getElementById("contact");
-            if (contactSection) contactSection.scrollIntoView({ behavior: "smooth" });
-          }}
-          className="relative overflow-hidden w-48 h-12 rounded-full bg-primary text-foreground shadow-md hover:shadow-lg transition-shadow focus:outline-none focus:ring-2 focus:ring-primary flex items-center justify-center cursor-pointer"
-        >
-          <div className="relative w-full h-full">
-            {buttonLabels.map((label, i) => (
-              <span 
-                key={label}
-                className={`absolute inset-0 flex items-center justify-center font-medium text-sm transition-all duration-500 transform ${
-                  i === labelIndex 
-                    ? "translate-y-0 opacity-100" 
-                    : i < labelIndex
-                      ? "-translate-y-4 opacity-0"
-                      : "translate-y-4 opacity-0"
-                }`}
-              >
-                {label}
-              </span>
-            ))}
+    <section id="top" className="hero">
+      <div className="shell hero-main">
+        <div className="hero-topline mono-label reveal"><span><span className="signal-dot" /> Independent technical studio</span><span className="hero-edition">IDEAS INTO REALITY. / BY AMEEN NAZER</span></div>
+        <div className="hero-grid">
+          <div className="hero-copy">
+            <p className="hero-eyebrow mono-label reveal">For the ones building what&apos;s next.</p>
+            <h1 className="hero-title reveal" style={{ "--i": 1 } as React.CSSProperties}>From zero.<br />To <span className="real-word">real<svg viewBox="0 0 300 18" aria-hidden="true"><path d="M3 13Q145 -3 295 9M70 16Q180 6 260 13" /></svg></span><span className="orange-period">.</span></h1>
+            <p className="hero-description reveal" style={{ "--i": 2 } as React.CSSProperties}>The technical partner for your first big bet.<br />I help you decide what to build. Then I build it<br className="desktop-break" /> to hold up when it takes off.</p>
+            <div className="hero-actions reveal" style={{ "--i": 3 } as React.CSSProperties}><a href="#contact" className="btn btn-signal">Let&apos;s build something <span aria-hidden="true">↗</span></a><a href="#work" className="text-link">Explore the work <span aria-hidden="true">↓</span></a></div>
+            <div className="hero-signature"><span className="signature-mark" aria-hidden="true">an.</span><div><span>Ameen Nazer</span><p>YOUR TECHNICAL HALF.</p></div></div>
           </div>
-        </button>
+          <Schematic />
+        </div>
+        <div className="hero-bottom mono-label"><span>Good judgment. Real engineering.</span><a href="#wedge">A little further down <span aria-hidden="true">↓</span></a><span>0 → 1 / BUILT TO MATTER</span></div>
       </div>
+      <div className="capability-strip"><div className="shell"><span>Strategy before syntax.</span><span aria-hidden="true">✳</span><span>Architecture that holds.</span><span aria-hidden="true">✳</span><span>Products that ship.</span><span aria-hidden="true">✳</span><span>Skin in the game.</span></div></div>
     </section>
   );
 }
