@@ -18,10 +18,12 @@ const martianMono = Martian_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "PROTO — a technical studio by Ameen Nazer",
+  title: "proto!",
   description:
     "PROTO is a technical studio for 0-to-1 founders. I help you decide what to build and how it should be engineered — then build the real first version.",
 };
+
+import DynamicFavicon from "@/components/DynamicFavicon";
 
 // Dark is canonical; this restores a stored light preference before paint.
 const themeScript = `try{var t=localStorage.getItem("proto-theme");if(t==="light")document.documentElement.setAttribute("data-theme","light")}catch(e){}`;
@@ -41,6 +43,7 @@ export default function RootLayout({
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
       </head>
       <body className="min-h-screen antialiased">
+        <DynamicFavicon />
         <LaunchIntro />
         <div className="substrate" aria-hidden="true" />
 
