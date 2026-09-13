@@ -3,6 +3,7 @@ import { Inter_Tight, Martian_Mono } from "next/font/google";
 import "./globals.css";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
+import LaunchIntro from "@/components/LaunchIntro";
 
 const interTight = Inter_Tight({
   variable: "--font-inter-tight",
@@ -40,6 +41,7 @@ export default function RootLayout({
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
       </head>
       <body className="min-h-screen antialiased">
+        <LaunchIntro />
         <div className="substrate" aria-hidden="true" />
 
         <div className="relative z-[1] flex min-h-screen flex-col">
