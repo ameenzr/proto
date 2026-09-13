@@ -1,13 +1,13 @@
-import type { Metadata } from "next";
-import { Inter_Tight, Martian_Mono } from "next/font/google";
+import type { Metadata, Viewport } from "next";
+import { Chakra_Petch, Martian_Mono } from "next/font/google";
 import "./globals.css";
 import Nav from "@/components/Nav";
-import Footer from "@/components/Footer";
-import LaunchIntro from "@/components/LaunchIntro";
+import DynamicFavicon from "@/components/DynamicFavicon";
 
-const interTight = Inter_Tight({
-  variable: "--font-inter-tight",
+const chakraPetch = Chakra_Petch({
+  variable: "--font-proto",
   subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
   display: "swap",
 });
 
@@ -23,7 +23,12 @@ export const metadata: Metadata = {
     "PROTO is a technical studio for 0-to-1 founders. I help you decide what to build and how it should be engineered — then build the real first version.",
 };
 
-import DynamicFavicon from "@/components/DynamicFavicon";
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  viewportFit: "cover",
+  themeColor: "#131413",
+};
 
 // Dark is canonical; this restores a stored light preference before paint.
 const themeScript = `try{var t=localStorage.getItem("proto-theme");if(t==="light")document.documentElement.setAttribute("data-theme","light")}catch(e){}`;
@@ -36,21 +41,19 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${interTight.variable} ${martianMono.variable}`}
+      className={`${chakraPetch.variable} ${martianMono.variable}`}
       suppressHydrationWarning
     >
       <head>
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
       </head>
-      <body className="min-h-screen antialiased">
+      <body className="min-h-screen antialiased flex flex-col">
         <DynamicFavicon />
-        <LaunchIntro />
         <div className="substrate" aria-hidden="true" />
 
-        <div className="relative z-[1] flex min-h-screen flex-col">
+        <div className="relative z-[1] flex min-h-screen flex-col flex-1">
           <Nav />
-          <main id="main" className="flex-1" tabIndex={-1}>{children}</main>
-          <Footer />
+          <main id="main" className="flex-1 flex flex-col justify-center" tabIndex={-1}>{children}</main>
         </div>
       </body>
     </html>
