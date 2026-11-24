@@ -14,7 +14,7 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="relative w-full py-24 px-6 md:px-12 bg-[#F2E6D9] border-t border-gray-100">
+    <section id="contact" className="relative w-full py-24 px-6 md:px-12 bg-card border-t border-border">
       <div className="max-w-7xl mx-auto flex flex-col items-center text-center gap-6 text-foreground">
         <div className="flex flex-col items-center">
           <span className="text-xs font-bold uppercase tracking-[0.2em] text-foreground/40 mb-2">

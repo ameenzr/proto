@@ -40,11 +40,11 @@ export default function Navbar() {
   };
 
   return (
-    <nav className="fixed top-0 left-0 w-full z-50 bg-gradient-to-br from-primary/25 via-background/70 to-secondary/25 backdrop-blur-2xl border-b border-white/40 shadow-sm transition-all duration-300">
+    <nav className="fixed top-0 left-0 w-full z-50 bg-background/80 backdrop-blur-2xl border-b border-border shadow-sm transition-all duration-300">
       <div className="flex items-center justify-between py-5 px-6 md:px-12 max-w-7xl mx-auto w-full relative z-[60]">
         <Link href="/" className="z-50" onClick={() => setIsOpen(false)}>
           <img
-            src="/logo black.png"
+            src="/logo white.png"
             alt="Proto"
             className="h-4.5 w-auto"
           />
